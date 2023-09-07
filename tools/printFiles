@@ -1,0 +1,17 @@
+#!/bin/bash
+
+directory="/home/gerben/fuzzer/fazzer1/corpus"
+
+if [ -d "$directory" ]; then
+  # Цикл для перебора файлов в папке
+  for file in "$directory"/*; do
+    if [ -f "$file" ]; then
+      echo "$file"
+      cat "$file"  # Используйте cat для вывода содержимого файла
+      echo
+    fi
+  done
+else
+  echo "Папка не существует: $directory"
+fi
+
